@@ -31,7 +31,7 @@ alias un='yay -Rns' #uninstalls a package and useless dependencies
 alias up='yay -Syu' #update all packages system and aur
 alias bye='shutdown now' #shuts down the system immediately
 #
-#antigen stuff and the sutosuggestions
+#antigen stuff and the autosuggestions
 source /usr/share/zsh/share/antigen.zsh
 antigen bundle zsh-users/zsh-autosuggestions
 antigen apply
