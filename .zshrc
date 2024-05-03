@@ -19,7 +19,7 @@ compinit
 #
 #
 #
-neofetch
+fastfetch
 #
 #
 #

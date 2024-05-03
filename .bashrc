@@ -1,7 +1,7 @@
 #
 # ~/.bashrc
 #
-neofetch
+fastfetch
 #
 #
 #
