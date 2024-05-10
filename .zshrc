@@ -1,10 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.zsh_history
 HISTSIZE=1000
@@ -27,6 +20,7 @@ fastfetch
 #
 #Aliases
 alias fucking='sudo' #because funny
+alias in='yay -S' #Installs (a) package(s) system and aur
 alias un='yay -Rns' #uninstalls a package and useless dependencies
 alias up='yay -Syu' #update all packages system and aur
 alias bye='shutdown now' #shuts down the system immediately
