@@ -19,15 +19,23 @@ the instructions for this should be smthin like this:
     Note: The fonts are already added to the included kitty config file, you dont need to edit it yourself
 
     ii. Install powerlevel10k
-    `$ yay -S zsh-theme-powerlevel10k-git`
+    ```
+    $ yay -S zsh-theme-powerlevel10k-git
+    ```
 
 2. Install synth-shell-prompt
-`$ yay -S synth-shell-prompt-git`
+```
+$ yay -S synth-shell-prompt-git
+```
 
 3. Install fastfetch
-`# pacman -S fastfetch`
+```
+# pacman -S fastfetch
+```
 
 4. Clone this repo
-`$ git clone https://github.com/ImPotassium/My.dotfiles.git`
+```
+$ git clone https://github.com/ImPotassium/My.dotfiles.git
+```
 
 5. Use a graphacal file manager to move or symlink all needed files
