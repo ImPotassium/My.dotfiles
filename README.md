@@ -22,17 +22,12 @@ the instructions for this should be smthin like this:
 Note The fonts are already added to the included kitty config file, you dont need to edit it yourself
 
 2. Install fastfetch
-```bash
+```
 # pacman -S fastfetch
 ```
 
-2. Install [zinit](https://github.com/zdharma-continuum/zinit?tab=readme-ov-file#automatic)
-```bash
-$ bash -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)"
-```
-
 3. Clone this repo
-```bash
+```
 $ git clone https://github.com/ImPotassium/My.dotfiles.git
 ```
 
