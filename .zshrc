@@ -83,3 +83,4 @@ alias up='yay -Syu' # update all packages system and aur
 alias bye='shutdown now' # shuts down the system immediately
 alias vim='nvim' # muscle memory fix
 alias ls='ls --color' # adds color to the ls command
+alias lsa='ls -a --color' # Makes it easier to use the ls -a command with color
