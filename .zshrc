@@ -5,6 +5,9 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+# Brag about my system when I open my terminal
+fastfetch
+
 # where plugins are stored
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
@@ -71,9 +74,6 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)" # change zoxide's command to 'cd' instead of 'z'
-
-# Brag about my system when I open my terminal
-fastfetch
 
 # Aliases
 alias fucking='sudo' # because funny
