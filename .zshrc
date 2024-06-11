@@ -1,12 +1,22 @@
-# The following lines were added by compinstall
-zstyle :compinstall filename '~/.zshrc'
-
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
-
-# Brag about my system when I open my terminal
-fastfetch
+# Brag about my system when I open my terminal (bro microsoft copilot helped with this. bro it keeps surprising me)
+case $(ps -o comm= -p $PPID) in
+   'yakuake')
+      # Config for Yakuake
+      fastfetch -c ~/.config/fastfetch/yakuake.jsonc
+      ;;
+   'kitty')
+      # Config for Kitty
+      fastfetch -c ~/.config/fastfetch/kitty.jsonc
+      ;;
+   'ytt')
+      # Config for ytt
+      fastfetch -c ~/.config/fastfetch/ytt.jsonc
+      ;;
+   *)
+      # Default config for everything else
+      fastfetch
+      ;;
+esac
 
 # where plugins are stored
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -23,9 +33,10 @@ source "${ZINIT_HOME}/zinit.zsh"
 # Load Zinit Plugins
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 zinit light zsh-users/zsh-syntax-highlighting
-zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-completions
 zinit light Aloxaf/fzf-tab
+zinit light atuinsh/atuin
 
 # Add in snippets
 zinit snippet OMZP::git
@@ -61,26 +72,37 @@ setopt appendhistory
 setopt sharehistory # share history through all active zsh sessions
 setopt hist_ignore_space # command won't be added to the history if you begin with a space
 setopt hist_save_no_dups # prevents duplicate commands from entering the history
-setopt hist_ignore_dups # prevents duplicate commands from entering the history
 setopt hist_find_no_dups # prevents duplicate commands from showing in the historical search
+setopt hist_ignore_dups # prevents duplicate commands from entering the history
 
 # Completion styling
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+  --color=hl:#61AFEF,hl+:#4DC4FF,info:#E5C07B,marker:#98C379
+  --color=prompt:#C678DD,spinner:#DE73FF,pointer:#DE73FF,header:#56B6C2
+  --color=border:#5c6370,scrollbar:#A5E075,label:#aeaeae,query:#ABB2BF
+  --border="rounded" --border-label="Double Quarter Pounder with Cheese" --border-label-pos="-8" --preview-window="border-bold"
+  --prompt="> " --marker=">" --pointer="◆" --separator=".. ..- ... . .- .-. -.-. .... -... - .-- "
+  --scrollbar="I" --layout="reverse"'
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
-# Shell integrations
-eval "$(fzf --zsh)"
+# Integrations
 eval "$(zoxide init --cmd cd zsh)" # change zoxide's command to 'cd' instead of 'z'
+eval "$(thefuck --alias)" # so I can curse when I make a mistake
+eval "$(atuin init zsh)" # enable atuin; a better history
+eval "$(fzf --zsh)" # fuzzy finder keybinds or smth
+export BAT_THEME="OneHalfDark" # sets the Bat theme to match Kitty
 
 # Aliases
+alias bye='shutdown now' # shuts down the system immediately
+alias cat='bat' # muscle memory fix
 alias fucking='sudo' # because funny
 alias in='yay -S' # Installs (a) package(s) system and aur
-alias un='yay -Rns' # uninstalls a package and useless dependencies
-alias up='yay -Syu' # update all packages system and aur
-alias bye='shutdown now' # shuts down the system immediately
-alias vim='nvim' # muscle memory fix
 alias ls='ls --color' # adds color to the ls command
-alias lsa='ls -a --color' # Makes it easier to use the ls -a command with color
+alias lsa='ls -a --color' # makes it easier to use the ls -a command with color
+alias un='yay -Rns' # uninstalls (a) package(s) and useless dependencies
+alias up='yay -Syu' # update all packages system and aur
+alias vim='nvim' # muscle memory fix

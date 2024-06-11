@@ -1,0 +1,23 @@
+# Always inserts the selected command for editing
+enter_accept = false
+
+# height of the search window
+inline_height = 30
+
+# Sets the style to compact
+style = "compact"
+
+# Places the search bar at the top and inverts the order
+invert = true
+
+# Displays the highlited command fully in case of long commands that display out of the terminal
+show_preview = true
+
+# Disables the help line
+show_help = false
+
+# Disables the tab line
+show_tabs = false
+
+# Disables scrolling up exits Atuin
+scroll_exits = false
