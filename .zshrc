@@ -1,21 +1,29 @@
 # Brag about my system when I open my terminal (bro microsoft copilot helped with this. bro it keeps surprising me)
 case $(ps -o comm= -p $PPID) in
+   'electron')
+      # Config for any Electron terminals, mainly for VSCode
+      fastfetch -c ~/.config/fastfetch/electron.jsonc
+   ;;
    'yakuake')
       # Config for Yakuake
       fastfetch -c ~/.config/fastfetch/yakuake.jsonc
-      ;;
+   ;;
    'kitty')
       # Config for Kitty
       fastfetch -c ~/.config/fastfetch/kitty.jsonc
-      ;;
-   'ytt')
-      # Config for ytt
+   ;;
+   'nvim')
+      # Config for Neovim terminal
+      fastfetch -c ~/.config/fastfetch/nvim.jsonc
+   ;;
+   'login')
+      # Config for YTT3 terminal
       fastfetch -c ~/.config/fastfetch/ytt.jsonc
-      ;;
+   ;;
    *)
       # Default config for everything else
       fastfetch
-      ;;
+   ;;
 esac
 
 # where plugins are stored
