@@ -1,4 +1,5 @@
 # Brag about my system when I open my terminal (bro microsoft copilot helped with this. bro it keeps surprising me)
+# I'm gonna do something with this I promise
 case $(ps -o comm= -p $PPID) in
    'electron')
       # Config for any Electron terminals, mainly for VSCode
@@ -114,3 +115,4 @@ alias lsa='ls -a --color' # makes it easier to use the ls -a command with color
 alias un='yay -Rns' # uninstalls (a) package(s) and useless dependencies
 alias up='yay -Syu' # update all packages system and aur
 alias vim='nvim' # muscle memory fix
+alias xcm='chmod +x' # shortens the command for adding execute perms for files
