@@ -116,3 +116,4 @@ alias un='yay -Rns' # uninstalls (a) package(s) and useless dependencies
 alias up='yay -Syu' # update all packages system and aur
 alias vim='nvim' # muscle memory fix
 alias xcm='chmod +x' # shortens the command for adding execute perms for files
+alias yeet-orphans='sudo pacman -Qdtq | sudo pacman -Rns -' # deletes orphan packages
