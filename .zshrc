@@ -9,6 +9,10 @@ case $(ps -o comm= -p $PPID) in
       # Config for Yakuake
       fastfetch -c ~/.config/fastfetch/yakuake.jsonc
    ;;
+   'dolphin')
+      # Config for Dolphin
+      
+   ;;
    'kitty')
       # Config for Kitty
       fastfetch -c ~/.config/fastfetch/kitty.jsonc
@@ -105,9 +109,13 @@ eval "$(atuin init zsh)" # enable atuin; a better history
 eval "$(fzf --zsh)" # fuzzy finder keybinds or smth
 export BAT_THEME="OneHalfDark" # sets the Bat theme to match Kitty
 
+# Path
+export PATH=$PATH:/home/Bam/.local/bin # for pipx
+
 # Aliases
 alias bye='shutdown now' # shuts down the system immediately
 alias cat='bat' # muscle memory fix
+alias freaking='sudo' # because funny but nicer
 alias fucking='sudo' # because funny
 alias in='yay -S' # Installs (a) package(s) system and aur
 alias ls='ls --color' # adds color to the ls command

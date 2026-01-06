@@ -42,9 +42,13 @@ bind 'TAB:menu-complete'
 [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
 eval "$(atuin init bash)"
 
+# Path
+export PATH=$PATH:/home/Bam/.local/bin # for pipx
+
 # Aliases
 alias bye='shutdown now' # shuts down the system immediately
 alias cat='bat' # muscle memory fix
+alias freaking='sudo' # because funny but nicer
 alias fucking='sudo' # because funny
 alias in='yay -S' # Installs (a) package(s) system and aur
 alias ls='ls --color' # adds color to the ls command

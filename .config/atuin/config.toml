@@ -21,3 +21,8 @@ show_tabs = false
 
 # Disables scrolling up exits Atuin
 scroll_exits = false
+
+# History filter use 'atuin history prune' to use
+history_filter = [
+   "-passin pass:" # openssl plain text password
+]
